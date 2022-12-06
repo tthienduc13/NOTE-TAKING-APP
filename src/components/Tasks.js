@@ -17,7 +17,7 @@ function Tasks({
               <p className="text-white font-semibold ">{info.tag}</p>
             </div>
           </div>
-          <p className="text-justify mb-1 min-h-[170px]">{info.content}</p>
+          <p className="text-justify mb-1 ">{info.content}</p>
           {/* <div className="pb-2 pt-4 flex flex-row font-semibold">
             <div className="flex-grow">09:38PM</div>
             <div>07 JANUARY 2023</div>
