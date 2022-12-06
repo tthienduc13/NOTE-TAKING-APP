@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Routes } from "react-router";
+import Home from "./Pages/Home";
+import AddNote from "./Pages/AddNote";
+import { useState, useEffect } from "react";
 function App() {
+  const [noteList, setNoteList] = useState(
+    JSON.parse(localStorage.getItem("noteList")) ?? []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("noteList", JSON.stringify(noteList));
+  }, [noteList]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home></Home>} />
+        <Route
+          path="/home"
+          element={
+            <Home noteList={noteList} functionSetNoteList={setNoteList}></Home>
+          }
+        />
+        <Route
+          path="/addnote"
+          element={
+            <AddNote
+              setNoteList={(notes) => setNoteList([...noteList, notes])}
+            ></AddNote>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
