@@ -14,7 +14,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={
             <Home noteList={noteList} functionSetNoteList={setNoteList}></Home>
           }
