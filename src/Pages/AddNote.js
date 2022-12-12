@@ -15,7 +15,7 @@ function AddNote({ setNoteList }) {
   const handleSubmit = () => {
     newNote.id++;
     setNoteList(newNote);
-    navigate("/home");
+    navigate("/");
   };
   return (
     <>
