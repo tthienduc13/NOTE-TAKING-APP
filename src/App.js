@@ -13,9 +13,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home></Home>} />
         <Route
-          path="/home"
+          path="/"
+          exact
           element={
             <Home noteList={noteList} functionSetNoteList={setNoteList}></Home>
           }
