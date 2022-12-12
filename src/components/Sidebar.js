@@ -33,13 +33,13 @@ function Sidebar() {
           {/* WishList */}
           {/* Assignments */}
           <div className="h-[70px] w-full p-4 border-b-[1px] border-[#cccc] flex  items-center">
-            <div className="text-[#1126E3] text-lg px-2 py-4">
+            <div className="text-[#364afd] text-lg px-2 py-4">
               <i class="fa-solid fa-circle"></i>
             </div>
             <div className="flex-grow ml-4">
               <p className="font-semibold text-xl">Assignments</p>
             </div>
-            <div className="w-[46px] h-[36px] bg-[#1126E3] rounded-lg flex justify-center items-center">
+            <div className="w-[46px] h-[36px] bg-[#364afd] rounded-lg flex justify-center items-center">
               <p className="text-white font-semibold text-lg">02</p>
             </div>
           </div>

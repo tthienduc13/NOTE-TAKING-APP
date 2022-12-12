@@ -17,15 +17,27 @@ function Heading() {
           </div>
         </div>
         <div className="w-4/5 flex flex-row justify-center items-center pr-[32px] ">
-          <div className="flex-grow">
-            <p className="font-semibold text-lg">All Notes</p>
+          <div className="flex-grow px-6">
+            {/* <p className="font-semibold text-lg">All Notes</p> */}
+            <div className=" relative font-semibold w-1/3 text-center text-lg px-6 py-2 duration-300 hover:scale-110 inline-block hover:duration-300 hover:text-white hover:bg-[#2bada5] hover:rounded-lg">
+              <Link to="/">All Notes</Link>
+              {/* <div className=" after:absolute after:content-[''] after:h-1 after:w-2/5 after:left-[125px] after:bg-[#2bada5] "></div> */}
+            </div>
+            <div className=" relative font-semibold w-1/3 text-center text-lg px-6 py-2 duration-300 hover:scale-110 inline-block hover:duration-300 hover:text-white hover:bg-yellow-500 hover:rounded-lg">
+              <Link to="/bookmarked">Bookmarks</Link>
+              {/* <div className=" after:absolute after:content-[''] after:h-1 after:w-2/5 after:left-[125px] after:bg-[#2bada5] "></div> */}
+            </div>
+            <div className=" relative font-semibold w-1/3 text-center text-lg px-6 py-2 duration-300 hover:scale-110 inline-block hover:duration-300 hover:text-white hover:bg-green-500 hover:rounded-lg">
+              <Link to="/done-list">Done List</Link>
+              {/* <div className=" after:absolute after:content-[''] after:h-1 after:w-2/5 after:left-[125px] after:bg-[#2bada5] "></div> */}
+            </div>
           </div>
           <div className="flex flex-row gap-5">
-            <div className="py-2">
+            {/* <div className="py-2">
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </div>
-            <div className="py-2">toogle</div>
-            <div className="text-lg font-semibold px-4 py-2 bg-[#2bada5] rounded-lg">
+            <div className="py-2">toogle</div> */}
+            <div className="text-lg font-semibold px-4 py-2 bg-[#2bada5] rounded-lg hover:scale-110 hover:duration-300">
               <Link to="/addnote">Add New Note</Link>
             </div>
           </div>

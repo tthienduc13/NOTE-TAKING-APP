@@ -13,15 +13,37 @@ function Tasks({
         <div className="px-6 py-4 flex flex-col ">
           <div className="w-full flex flex-row py-2 justify-center items-center">
             <h2 className="text-2xl font-semibold flex-grow">{info.title}</h2>
-            <div className=" bg-[#f84b6b] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
-              <p className="text-white font-semibold ">{info.tag}</p>
-            </div>
+            {info.tag === "Videos" ? (
+              <div className=" bg-[#FD83F8] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            ) : info.tag === "Wishlist" ? (
+              <div className=" bg-[#FF9C54] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            ) : info.tag === "Assignment" ? (
+              <div className=" bg-[#364afd] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            ) : info.tag === "Projects" ? (
+              <div className=" bg-[#2fc0b6] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            ) : info.tag === "Work" ? (
+              <div className=" bg-[#f84b6b] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            ) : (
+              <div className=" bg-[#FEB322] rounded-lg flex justify-center items-center px-4 py-2 cursor-pointer  hover:scale-110">
+                <p className="text-white font-semibold ">{info.tag}</p>
+              </div>
+            )}
           </div>
           <p className="text-justify mb-1 ">{info.content}</p>
-          {/* <div className="pb-2 pt-4 flex flex-row font-semibold">
+          <div className="pb-2 pt-4 flex flex-row font-semibold">
             <div className="flex-grow">09:38PM</div>
             <div>07 JANUARY 2023</div>
-          </div> */}
+          </div>
         </div>
         {/* Navbar */}
         <div className="w-full flex flex-row ">
@@ -29,7 +51,7 @@ function Tasks({
             className="w-1/3 text-center"
             onClick={() => functionChecked(index)}
           >
-            {info.isChecked === true ? (
+            {info.isChecked === false ? (
               <div className=" text-green-500 text-2xl p-2 bg-[#f5d8dd]">
                 <i className="fa-solid fa-check hover:scale-125 cursor-pointer duration-300"></i>
               </div>
@@ -43,7 +65,7 @@ function Tasks({
             className="w-1/3 text-center"
             onClick={() => functionMarked(index)}
           >
-            {info.isMarked === true ? (
+            {info.isMarked === false ? (
               <div className="text-yellow-500 text-2xl p-2 bg-[#f5d8dd]">
                 <i className="fa-solid fa-star hover:scale-125 cursor-pointer duration-300"></i>
               </div>

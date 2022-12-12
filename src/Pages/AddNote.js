@@ -15,12 +15,13 @@ function AddNote({ setNoteList }) {
   const handleSubmit = () => {
     newNote.id++;
     setNoteList(newNote);
-    navigate("/home");
+    navigate("/");
   };
+  console.log(newNote);
   return (
     <>
       <div className="h-screen w-screen flex bg-[#F5F5F5] justify-center items-center">
-        <div className="h-1/2 w-1/2 bg-white rounded-xl flex flex-col py-4 px-6 ">
+        <div className=" w-1/2 bg-white rounded-xl flex flex-col py-4 px-6 ">
           <div className="p-4 border-b-2">
             <h2 className="w-full text-center text-3xl font-semibold">
               Create New Note
@@ -30,7 +31,7 @@ function AddNote({ setNoteList }) {
             <div className="mt-4 font-semibold text-xl italic underline">
               Title here:
             </div>
-            <div className="flex flex-row mt-2 justify-between">
+            <div className="flex flex-row mt-2 justify-between flex-wrap">
               <input
                 className="w-[calc(75%-15px)] outline-none border-black border-2 text-2xl rounded-lg p-2"
                 onChange={(e) =>
@@ -40,15 +41,17 @@ function AddNote({ setNoteList }) {
                   })
                 }
               ></input>
-              <div className="w-[calc(25%-15px)] flex justify-center items-center rounded-lg text-white font-semibold text-2xl">
+              <div className="w-1/4 flex justify-center items-center rounded-lg text-white font-semibold text-2xl">
                 <i className="fa-solid fa-tag mr-2 text-black"></i>
                 <select
-                  placeholder="text"
-                  className="bg-[#088f86] outline-none rounded-lg p-2"
+                  className="bg-[#088f86] outline-none rounded-lg p-2 w-4/5"
+                  onChange={(e) =>
+                    setNewNote({ ...newNote, tag: e.target.value })
+                  }
                 >
                   <option></option>
                   <option>Videos</option>
-                  <option>Wish List</option>
+                  <option>Wishlist</option>
                   <option>Assignment</option>
                   <option>Projects</option>
                   <option>Work</option>

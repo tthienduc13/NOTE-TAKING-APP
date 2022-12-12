@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router";
+import { useState, useEffect } from "react";
 import Home from "./Pages/Home";
 import AddNote from "./Pages/AddNote";
-import { useState, useEffect } from "react";
+import BookMarked from "./Pages/BookMarked";
+import Done from "./Pages/Done";
 function App() {
   const [noteList, setNoteList] = useState(
     JSON.parse(localStorage.getItem("noteList")) ?? []
@@ -24,8 +26,23 @@ function App() {
           path="/addnote"
           element={
             <AddNote
-              setNoteList={(notes) => setNoteList([...noteList, notes])}
+              setNoteList={(notes) => setNoteList([notes, ...noteList])}
             ></AddNote>
+          }
+        />
+        <Route
+          path="/bookmarked"
+          element={
+            <BookMarked
+              noteList={noteList}
+              functionSetNoteList={setNoteList}
+            ></BookMarked>
+          }
+        />
+        <Route
+          path="/done-list"
+          element={
+            <Done noteList={noteList} functionSetNoteList={setNoteList}></Done>
           }
         />
       </Routes>

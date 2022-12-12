@@ -36,7 +36,7 @@ function Main({ noteList, functionSetNoteList }) {
     <>
       <div className="absolute top-24  w-full h-screen  flex flex-row z-0">
         <div className=" w-4/5  px-6 py-10 absolute right-0">
-          <div className=" w-full flex  flex-wrap gap-[60px] items-stretch ">
+          <div className=" w-full  flex h-fit flex-wrap gap-[60px] items-stretch ">
             {noteList.map((note, index) => (
               <Tasks
                 info={note}
